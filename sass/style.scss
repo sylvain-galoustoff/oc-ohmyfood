@@ -76,7 +76,11 @@ a.button {
     align-items: center;
     position: relative;
     z-index: 1;
-    color: red;
+    @include trans;
+
+    &:hover {
+        transform: translateX(-5px);
+    }
 }
 
 #site-title {
@@ -186,6 +190,7 @@ a.button {
 }
 
 .restaurant-card {
+    position: relative;
     display: block;
     color: $black;
     background-color: $white;
@@ -193,6 +198,18 @@ a.button {
     overflow: hidden;
     border-radius: 15px;
     margin-bottom: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    background-color: $greenBg;
+    border-radius: 2px;
+    color: $greenTxt;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .restaurant-img {
@@ -232,6 +249,7 @@ a.button {
 
 .restaurant-like {
     position: relative;
+    cursor: pointer;
 
     &:after {
         content: "";
@@ -295,7 +313,7 @@ a.button {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fade .2s linear forwards 3s;
+    animation: fade .2s linear forwards 1.5s;
 }
 
 @keyframes fade {
@@ -334,7 +352,7 @@ a.button {
         width: 0;
         height: 100%;
         background: $gradient;
-        animation: progress 3s linear forwards;
+        animation: progress 1.5s linear forwards;
     }
 }
 
@@ -345,5 +363,156 @@ a.button {
 
     to {
         width: 100%;
+    }
+}
+
+/* PAGES RESTAURANT */
+.restaurant {
+    header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+    }
+}
+
+.menu {
+    padding-top: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+#menu-palette {
+    background-image: url(../img/restaurants/la-palette-du-gout.jpg);
+}
+
+#menu-delice {
+    background-image: url(../img/restaurants/le-delice-des-sens.jpg);
+}
+
+#menu-note {
+    background-image: url(../img/restaurants/la-note-enchantee.jpg);
+}
+
+#menu-francaise {
+    background-image: url(../img/restaurants/a-la-francaise.jpg);
+}
+
+#content {
+    background-color: $greyBg;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 40px $screenMargeMobile;
+}
+
+#content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.plats-liste {
+    margin-bottom: 40px;
+
+    .plat-card:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.plats-liste-titre {
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background-color: $greenBg;
+    }
+}
+
+.plat-card {
+    background-color: $white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+}
+
+.plat-content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    width: calc(100% + 60px);
+    @include trans;
+
+    &:hover {
+        width: 100%;
+    }
+}
+
+.plat-text {
+    width: 50%;
+}
+
+.plat-checked {
+    width: 60px;
+    margin-left: auto;
+}
+
+.plat-text {
+    padding: 15px;
+    flex: 1;
+}
+
+.plat-titre {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.plat-description {
+    font-size: 15px;
+}
+
+.plat-prix {
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.plat-checked {
+    background-color: $greenBg;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    font-size: 1.5rem;
+    color: $white;
+}
+
+#submit-button {
+    display: flex;
+    justify-content: center;
+
+    a.button {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
