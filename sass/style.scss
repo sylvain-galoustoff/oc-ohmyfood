@@ -16,6 +16,16 @@ body {
     color: $black;
 }
 
+.container {
+    max-width: 1055px;
+    margin: auto;
+}
+
+.sub-container {
+    max-width: 634px;
+    margin: auto;
+}
+
 h1 {
     @include h1;
 }
@@ -213,10 +223,11 @@ a.button {
 }
 
 .restaurant-img {
-    height: 230px;
+    max-height: 230px;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     img {
         display: block;
@@ -250,6 +261,7 @@ a.button {
 .restaurant-like {
     position: relative;
     cursor: pointer;
+    margin-left: 10px;
 
     &:after {
         content: "";
@@ -370,7 +382,7 @@ a.button {
 .restaurant {
     header {
         position: fixed;
-        z-index: 10;
+        z-index: 20;
         top: 0;
         left: 0;
         width: 100%;
@@ -379,33 +391,36 @@ a.button {
 }
 
 .menu {
-    padding-top: 300px;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
 }
 
-#menu-palette {
-    background-image: url(../img/restaurants/la-palette-du-gout.jpg);
-}
+.restaurant-img-container {
+    position: fixed;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 
-#menu-delice {
-    background-image: url(../img/restaurants/le-delice-des-sens.jpg);
-}
-
-#menu-note {
-    background-image: url(../img/restaurants/la-note-enchantee.jpg);
-}
-
-#menu-francaise {
-    background-image: url(../img/restaurants/a-la-francaise.jpg);
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 #content {
+    position: relative;
+    z-index: 10;
     background-color: $greyBg;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 40px $screenMargeMobile;
+    margin-top: 245px;
 }
 
 #content-header {
@@ -515,4 +530,67 @@ a.button {
         padding-left: 50px;
         padding-right: 50px;
     }
+}
+
+@media screen and (min-width: 670px) {
+    .menu {
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #pills {
+        display: flex;
+        gap: 25px;
+    }
+
+    .pill {
+        flex: 1;
+    }
+
+    #restaurants-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 100px;
+        row-gap: 50px;
+    }
+
+    .restaurant-card {
+        margin-bottom: 0;
+    }
+
+    #footer-list {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            margin-bottom: 0;
+        }
+
+    }
+
+    .footer-list-item {
+        margin-left: 10px;
+    }
+
+    #footer-logo {
+        order: 5;
+        margin-bottom: 0;
+        margin-left: 30px;
+    }
+
+    #mentions-legales {
+        margin-left: 30px;
+    }
+
+    .restaurant-img-container {
+        height: 383px;
+    }
+
+    #content {
+        margin-top: 400px;
+    }
+
 }
