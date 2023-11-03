@@ -525,10 +525,16 @@ a.button {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .plat-description {
     font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .plat-prix {
