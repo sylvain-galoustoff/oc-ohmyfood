@@ -663,11 +663,6 @@ a.button:hover:before {
   padding-right: 50px;
 }
 
-@media screen and (min-width: 670px) {
-  .menu {
-    background-size: cover;
-  }
-}
 @media screen and (min-width: 768px) {
   #pills {
     display: flex;
